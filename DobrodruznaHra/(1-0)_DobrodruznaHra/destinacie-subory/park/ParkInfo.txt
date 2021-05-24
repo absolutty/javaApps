@@ -1,0 +1,5 @@
+Park
+Destinácia Park umožňuje dáva hráčovi príklady na ktoré zadáva výsledky
+- pri jednom navštívení sú mu dané 3 príklady
+- ak hráč trafí výsledok príkladu, pripočíta mu k skóre +25
+- ak hráč netrafí výsledok príkladu, odpočíta mu od skore -25

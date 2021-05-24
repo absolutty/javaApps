@@ -1,0 +1,101 @@
+@startuml
+abstract class sk.uniza.fri.destinacie.Destinacia {
+- char key
+- String nazov
+- Color farba
+- PopisDestinacie popis
+- {static} Color DEFAULT_FARBA_DESTINACIE
++ char getKey()
++ String getNazov()
++ Color getFarba()
++ {static} Color getDefaultFarbaDestinacie()
++ void navstiv()
++ String getPopis()
++ int vyberMoznost(String[])
+}
+class sk.uniza.fri.destinacie.hrad.Hrad {
+- {static} String NAZOV
+- {static} Color FARBA
+- HashMap<Integer,Otazka> zoznamOtazok
+- ArrayList<Integer> spytaneSaOtazky
+- HashMap<Integer,Hadanka> zoznamHadaniek
+- ArrayList<Integer> spytaneSaHadanky
+- {static} String[] MOZNOSTI
+- {static} int POCET_PYTANYCH_OTAZOK
+- {static} int HODNOTA_OTAZKY
+- {static} int HODNOTA_HADANKY
++ void navstiv()
+- void pokladajOtazky()
+- void nacitajOtazky()
+- void pokladajHadanky()
+- void nacitajHadanky()
+}
+class sk.uniza.fri.destinacie.domcek.Domcek {
+- {static} String NAZOV
+- {static} Color FARBA
+- {static} String[] MOZNOSTI
+- {static} int CENA_LOTERIE
+- {static} int VYHRA_LOTERIE
++ void navstiv()
+- void obchodHP()
+- void loteria()
+}
+class sk.uniza.fri.destinacie.randomEvent.RandomEvent {
+- {static} String NAZOV
+- {static} Color FARBA
+- {static} NahodnaUdalost[] NAHODNE_UDALOSTI
++ void navstiv()
+}
+class sk.uniza.fri.destinacie.randomEvent.RandomEvent.NahodnaUdalost {
+- int upravujuceHP
+- int upravujuceSkore
++ String vykonajUdalost()
++ int getUpravujuceHP()
++ int getUpravujuceSkore()
+}
+class sk.uniza.fri.destinacie.park.Park {
+- {static} String NAZOV
+- {static} Color FARBA
+- HashMap<Integer,Priklad> zoznamPrikladov
+- ArrayList<Integer> polozenePriklady
+- {static} String[] MOZNOSTI
+- {static} int POCET_PRIKLADOV
+- {static} int HODNOTA_PRIKLADU
++ void navstiv()
+- void pokladajPriklady()
+- void nacitajPriklady()
+}
+class sk.uniza.fri.destinacie.park.Priklad {
+- String zneniePrikladu
+- int vysledok
++ boolean zadajPriklad()
++ String toString()
+}
+class sk.uniza.fri.destinacie.PopisDestinacie {
+- ArrayList<String> popis
+- void nacitajPopis(Destinacia)
++ String getPopis()
+}
+class sk.uniza.fri.destinacie.hrad.Hadanka {
+- String znenieHadanky
+- String[] mozneOdpovede
++ boolean spytajSaHadanku()
+- boolean spravnaOdpoved(String)
++ String getSpravnuOdpoved()
+}
+class sk.uniza.fri.destinacie.hrad.Otazka {
+- String znenieOtazky
+- int jePravda
+- String odpovedNaOtazku
+- {static} String[] MOZNOSTI_ODPOVEDE
++ boolean spytajSaOtazku()
++ String getOdpovedNaOtazku()
+}
+
+
+sk.uniza.fri.destinacie.Destinacia <|-- sk.uniza.fri.destinacie.hrad.Hrad
+sk.uniza.fri.destinacie.Destinacia <|-- sk.uniza.fri.destinacie.domcek.Domcek
+sk.uniza.fri.destinacie.Destinacia <|-- sk.uniza.fri.destinacie.randomEvent.RandomEvent
+sk.uniza.fri.destinacie.randomEvent.RandomEvent +.. sk.uniza.fri.destinacie.randomEvent.RandomEvent.NahodnaUdalost
+sk.uniza.fri.destinacie.Destinacia <|-- sk.uniza.fri.destinacie.park.Park
+@enduml

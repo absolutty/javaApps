@@ -1,0 +1,22 @@
+@startuml
+class sk.uniza.fri.grafickePrvky.Menu {
+- Body body
+- {static} int PADDING
++ void generujZobrazenie()
++ void nastavHP(int)
++ void nastavSkore(int)
+}
+class sk.uniza.fri.grafickePrvky.Menu.Body {
+- JTextField pocetHP
+- JTextField pocetSkore
+- void generujBody()
+}
+class sk.uniza.fri.grafickePrvky.Uprav {
++ {static} void komponent(Component,int,int)
+}
+
+
+javax.swing.JPanel <|-- sk.uniza.fri.grafickePrvky.Menu
+sk.uniza.fri.grafickePrvky.Menu +.. sk.uniza.fri.grafickePrvky.Menu.Body
+sk.uniza.fri.grafickePrvky.JPanel <|-- sk.uniza.fri.grafickePrvky.Menu.Body
+@enduml

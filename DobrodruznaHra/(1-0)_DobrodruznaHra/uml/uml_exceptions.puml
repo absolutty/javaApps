@@ -1,0 +1,12 @@
+@startuml
+class sk.uniza.fri.exceptions.PosunException {
+- int x
+- int y
++ {static} int upravHodnotu(int,int)
++ int getX()
++ int getY()
+}
+
+
+sk.uniza.fri.exceptions.ArrayIndexOutOfBoundsException <|-- sk.uniza.fri.exceptions.PosunException
+@enduml

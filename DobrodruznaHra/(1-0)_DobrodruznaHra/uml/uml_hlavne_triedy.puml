@@ -1,0 +1,67 @@
+@startuml
+class sk.uniza.fri.Hrac {
+- String nickname
+- int healthPoints
+- int skore
+- Suradnice suradnice
++ String toString()
++ int nachadzaSaNaX()
++ int nachadzaSaNaY()
++ void nastavNoveSuradnice(Suradnice)
++ int getHealthPoints()
++ int getSkore()
++ void zmenHP(int)
++ void upravSkore(int)
++ String getMeno()
+}
+class sk.uniza.fri.Policko {
+- Destinacia destinaciaPolicka
+- Hrac hrac
+- boolean jeObsadeneHracom
++ void pridajHraca(Hrac)
++ Hrac odoberHraca()
+- void navstivDestinaciu()
++ String toString()
++ Destinacia getDestinaciaPolicka()
++ boolean jeObsadene()
++ Color getFarbuDestinacie()
++ String dajPopis()
+}
+class sk.uniza.fri.DobrodruznaHra {
+- {static} DobrodruznaHra instanciaObjektu
+- {static} int VELKOST_PLOCHY
+- {static} Destinacia[] ZOZNAM_DESTINACII
+- {static} int VELKOST_WIDGETOV
+- Policko[][] zoznamPolicok
+- JPanel zobrazeniePolicok
+- Menu zobrazenieMenu
+- JFrame frame
+- Hrac hrac
++ {static} DobrodruznaHra dajInstanciu()
+- {static} String nacitajMeno()
+- void inicializujPolicka()
+- void generujZobrazeniePolicok()
+- void vykresliFrame()
+- boolean obsahujeNejakuDestinaciu(int,int)
+- void posunHraca(int)
+- void vypisPolicko()
++ void upravHPHraca(int)
++ void upravSkore(int)
++ int getHPHraca()
++ int getSkoreHraca()
++ JFrame getFrame()
++ void ukonciHru()
+- void zapisNajvyssieSkore()
+}
+class sk.uniza.fri.DobrodruznaHra.OvladanieHryKlavesnica {
++ void keyPressed(KeyEvent)
+}
+class sk.uniza.fri.Main {
++ {static} void main(String[])
+}
+
+
+java.awt.Button <|-- sk.uniza.fri.Policko
+sk.uniza.fri.DobrodruznaHra +.. sk.uniza.fri.DobrodruznaHra.OvladanieHryKlavesnica
+sk.uniza.fri.KeyAdapter <|-- sk.uniza.fri.DobrodruznaHra.OvladanieHryKlavesnica
+@enduml

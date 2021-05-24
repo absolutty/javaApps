@@ -1,0 +1,5 @@
+RandomEvent
+Destinácia RandomEvent hráčovi môže uškodiť alebo mu môže pomôcť
+- je zložená s niekoľkých náhodných udalostí (tie majú rôzne pravdepodobnosti), kt. môžu nastať
+- lepší prípad: pripočítaju mu HP + pripočítajú mu skóre
+- horší prípad: odpočítajú mu HP + odpočítajú mu skóre

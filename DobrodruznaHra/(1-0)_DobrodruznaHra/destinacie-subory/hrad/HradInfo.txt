@@ -1,0 +1,9 @@
+Hrad
+Destinácia Hrad umožňuje pokladá hrá z hráčom otázkové hry
+- pri jednom navštívení sú mu položené 3 otázky
+- môže si zvoliť či chce odpovedať na áno/nie otázky
+    - ak hráč uhádne otázku, pripočíta mu k skóre +20
+    - ak hráč neuhádne otázku, odpočíta mu od skore -20
+- môže si zvoliť odpovedanie na hádanky
+    - ak hráč uhádne hádanku, pripočíta mu k skóre +30
+    - ak hráč neuhádne hádanku, odpočíta mu od skore -30
