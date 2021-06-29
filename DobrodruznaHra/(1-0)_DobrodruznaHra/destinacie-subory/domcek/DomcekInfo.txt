@@ -1,4 +1,0 @@
-Domcek
-Destinácia Domček umožňuje hráčovi úkony:
-- doplniť HP výmenou za jeho skóre (doplňované HP = pocet_skore / 10)
-- kúpiť si lístok do lotérie s ktorým je možné vyhrať AŽ 1000 skóre
